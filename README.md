@@ -41,6 +41,7 @@ DEBUG="True"
 SECRET_KEY=""
 ```
 **Использование:**
+
 Запустите tailwind:
 ```
 python manage.py tailwind start
@@ -50,6 +51,7 @@ python manage.py tailwind start
 python manage.py runserver
 ```
 **Добавление Tailwind в дополнительные шаблоны:**
+
 По умолчанию landing_page, accounts и dashboard имеют встроенную поддержку Tailwind в соответствующих файлах base.html.
 
 Однако если вы хотите создать новое приложение и добавить в него поддержку Tailwind, либо наследуйте файлы base.html других приложений, либо добавьте следующие теги в свои новые HTML-шаблоны:
