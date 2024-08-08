@@ -1,0 +1,16 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<h1>Привет, <strong>{{request.user}}</strong>. Добро пожаловать на панель управления</h1>
+
+Это пустая панель управления, которая наследуется от dashboard/base.html.</strong>
+
+<p><strong style="color:red;">Эта страница доступна только для авторизованных пользователей.</strong></p>
+
+<p>Чтобы выйти, нажмите <button><a href="{% url 'accounts:logout' %}" style="color: #000; text-decoration: none;">здесь</a></button></p>
+
+
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock title %}
+
+{% block form %}
+    <div class="registration-cssave">
+        <form action="{% url 'accounts:login' %}" method="post">
+            {% csrf_token %}
+
+            <h3 class="text-center">Логин</h3>
+
+            {% if message %}
+                <p class="error">{{ message }}</p>
+            {% endif %}
+
+            <div class="form-group">
+                <input class="form-control item" type="text" name="username" maxlength="15" minlength="4" pattern="^[a-zA-Z0-9_.-]*$" id="username" placeholder="Логин" required>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control item" type="password" name="password" minlength="6" id="password" placeholder="Пароль" required>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary btn-block create-account" type="submit">Вход в аккаунт</button>
+            </div>
+
+            <p class="dont-have">
+                Нет аккаунта? <a href="{% url 'accounts:register' %}">Создайте его здесь.</a>
+            </p>
+        </form>
+    </div>
+{% endblock %}

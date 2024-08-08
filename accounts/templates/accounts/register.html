@@ -1,0 +1,46 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block title %}Register{% endblock title %}
+
+{% block form %}
+    <div class="registration-cssave">
+        <form action="{% url 'accounts:register' %}" method="post">
+            {% csrf_token %}
+
+            <h3 class="text-center">Регистрация</h3>
+
+            {% if message %}
+                <p class="error">{{ message }}</p>
+            {% endif %}
+
+            <div class="form-group">
+                <p class="field-label">Логин</p>
+                {{ form.username }}
+            </div>
+
+            <div class="form-group">
+                <p class="field-label">Email</p>
+                {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                <p class="field-label">Пароль</p>
+                {{ form.password1 }}
+            </div>
+
+            <div class="form-group">
+                <p class="field-label">Подтверждение пароля</p>
+                {{ form.password2 }}
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary btn-block create-account" type="submit">Зарегистрироваться</button>
+            </div>
+
+            <p class="dont-have">
+                Уже есть аккаунт? <a href="{% url 'accounts:login' %}">Логин здесь.</a>
+            </p>
+        </form>
+    </div>
+{% endblock %}

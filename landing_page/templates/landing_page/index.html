@@ -1,0 +1,16 @@
+{% extends 'landing_page/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<h1>Добро пожаловать на стартовую страницу</h1>
+
+Это пустая стартовая страница, которая наследуется от landing_page/base.html.
+
+<p>
+    <button class="btn btn-primary"><a href="{% url 'accounts:login' %}" style="color: #000; text-decoration: none;">Войти</a></button>
+    <button class="btn btn-success"><a href="{% url 'accounts:register' %}" style="color: #000; text-decoration: none;">Зарегистрироваться</a></button>
+</p>
+
+{% endblock content %}
