@@ -32,6 +32,8 @@ pip install -r requirements.txt
 Запустите setup.sh и введите новое имя проекта:
 ```
 sh setup.sh
+...
+Введите новое имя проекта: 
 ```
 Измените название .env.example на .env и замените ключ в параметре SECRET_KEY.
 ```
